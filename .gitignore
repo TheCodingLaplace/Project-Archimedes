@@ -1,0 +1,5 @@
+# Manualy created
+.env
+inventory/
+playbooks/
+roles/

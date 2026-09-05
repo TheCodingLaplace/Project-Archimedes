@@ -1,0 +1,173 @@
+main_machine: #Dev station
+  machine_name: "Galaxy book 4"
+  code_name: "Grayknight"
+
+  cpu:
+    fabricator: "Intel"
+    model: "core i3"
+    model_type: "1315U"
+
+  gpu:
+    fabricator: "Intel"
+    name: "Intel Raptor-lake Lake-P"
+    type: "Integraded"
+    capacity: false    
+  
+  memory:
+    type: "LPDDR4x"
+    ram_capacity_gb: 8
+    swap: true
+    swap_type: zram
+    swap_amount_gb: 8
+  
+  disc:
+    type: "ssd nvme"
+    capacity_gb: 256 
+  
+  system:
+    os: "Linux"
+    os_specific: "Mint zena"
+    backup:
+      os_instalarion: true
+      os_backup: false
+      archives_backup: false
+    wm:
+      specific: "I3WM"
+      grafic_protocol: "X11"
+      compositor: "Picom"
+      alternative_wm: true
+      options: 
+        - "Cinamon"
+        - "Kubuntu"
+
+  idle_comsuption: #boot
+    cpu_percentage: 2
+    ram_gb: 1
+
+netbook: #Dedicaded server
+  
+  machine_name: "Acer aspire one"
+  code_name: "Atom" # Inspired in the 'Real Steel' Atom robot
+
+  cpu:
+    fabricator: "Intel"
+    model: "Atom"
+    model_type: "N270"
+  
+  gpu:
+    fabricator: "Intel"
+    name: "Intel mobile 945GSE Express"
+    type: "Integraded"
+    capacity: false
+  
+  memory:
+    type: "DDR2"
+    ram_capacity_gb: 2
+    swap: true
+    swap_type: "storage swap"
+    swap_amount_gb: 1
+  
+  disc:
+    type: "hd"
+    capacity_gb: 512
+  
+  system:
+    os: "Linux"
+    os_specific: "Debian bookworm"
+    backup:
+      os_instalation: true
+      os_backup: false
+      archives_bakcup: false
+    wm:
+      specific: "I3WM"
+      grafic_protocol: "X11"
+      alternative_wm: false
+      options: false
+
+  idle_comsuption: #boot
+    cpu_percentage: 3
+    ram_gb: 0.25
+
+cellphone_1:
+
+  machine_name: "Galaxy A15 5g"
+  code_name: "Pawn"
+
+  cpu:
+    fabricator: "MediaTek"
+    model: "Helio G99"
+    model_type: "MT6789"
+  
+  gpu:
+    fabricator: "MediaTek"
+    name: "Mali-G57 MC2"
+    type: "Integraded"
+    capacity: false 
+  
+  memory:
+    type: "LPDDR4x"
+    ram_capacity_gb: 8
+    swap: true
+    swap_type: "storage swap"
+    swap_amount_gb: 8
+  
+  disc:
+    type: "UFS 2.2"
+    capacity_gb: 252
+  
+  system:
+    os: "Linux"
+    os_specific: "Termux"
+    backup:
+      os_instalation: true
+      os_backup: false
+      archives_backup: true
+    wm:
+      specific:
+      grafic_protocol:
+      alternative_wm:
+      options:
+
+  idle_consumption: # boot
+    cpu_percentage: "unknow" # no root, yet...
+    ram_gb:
+
+cellphone_2:
+
+  machine_name: "Lg k7+"
+  code_name: "Flank Pawn"
+
+  cpu:
+    fabricator:
+    model:
+    model_type:
+  gpu:
+    fabricator:
+    name:
+    type:
+    capacity:
+  memory:
+    type:
+    ram_capacity_gb:
+    zram:
+    swap:
+    swap_amount_gb:
+  disc:
+    type:
+    capacity_gb:
+  system:
+    os: "Linux"
+    os_specific: "Termux"
+    backup:
+      os_instalation:
+      os_backup:
+      archives_backup:
+  wm:
+    specific:
+    grafic_protocol:
+    alternative_wm:
+    options:
+
+  idle_consumption: # boot
+    cpu_percentage:
+    ram_gb:
