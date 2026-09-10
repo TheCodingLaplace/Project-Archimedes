@@ -33,7 +33,7 @@ Here's a quick diagram of the current/planed workflow, which may of may not be c
 \  Portfolio environment -- Documentation -- MkDocks webpages            |
 \      /      |  \                                                       |
 \     /       |   \                                                      |
-\    /        |    Public performance dashboard -- Grafana ¹               |
+\    /        |    Public performance dashboard -- Grafana ¹             |
 \   /         |                                                        Nginx
 \   |  Self-hosted services ²                                        Dedicated  
 \   |                                                              load-balancer  
