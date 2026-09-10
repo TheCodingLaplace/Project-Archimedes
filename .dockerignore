@@ -1,0 +1,8 @@
+ansible/*
+inventory/*
+playbooks/*
+roles/*
+.env
+DevNotes.md
+LICENSE
+README.md

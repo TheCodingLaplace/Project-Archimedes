@@ -1,0 +1,20 @@
+FROM debian:bookworm-slim
+
+# Dependencies configuration
+RUN apt-get update && apt-get install -y \
+    ca-certificates \
+    curl \
+    && rm -rf /var/lib/apt/lists/* 
+
+# Respective archtecture of atom
+ENV CLOUDFLARED_ARCH=386
+
+# Runs the proper comand to download and give the permission to the respective cloudflared arch binary
+RUN curl -L -o /usr/local/bin/cloudflared https://github.com/cloudflare/cloudflared/releases/latest/download/cloudflared-linux-${CLOUDFLARED_ARCH} \
+    && chmod +x /usr/local/bin/cloudflared
+
+ENTRYPOINT ["cloudflared", "--no-autoupdate"]
+CMD ["version"]
+
+# This files grant that I will have a possibility to manualy compile a dockerimage of cloudflared and run it as a service
+# if I needed so, although it may or may not be curently working 'cause I did not test it yet.

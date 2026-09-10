@@ -1,6 +1,6 @@
 main_machine: #Dev station
   machine_name: "Galaxy book 4"
-  code_name: "Grayknight"
+  code_name: "Grayknight" # I like chess, and the machine it's gray, so...
 
   cpu:
     fabricator: "Intel"
@@ -130,12 +130,12 @@ cellphone_1:
 
   idle_consumption: # boot
     cpu_percentage: "unknow" # no root, yet...
-    ram_gb:
+    ram_gb: 3,5
 
 cellphone_2:
 
   machine_name: "Lg k7+"
-  code_name: "Flank Pawn"
+  code_name: "Flank Pawn" # It is like pawn, but weaker
 
   cpu:
     fabricator:

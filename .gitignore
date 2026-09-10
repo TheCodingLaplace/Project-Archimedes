@@ -1,5 +1,9 @@
 # Manualy created
+.github/workflows/*
+AWS/modules/*
+AWS/enviroments/*
 .env
-inventory/
+inventory/*/
+inventory/*.ini
 playbooks/
 roles/
