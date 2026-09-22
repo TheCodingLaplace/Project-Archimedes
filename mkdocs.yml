@@ -1,0 +1,8 @@
+site_name: Project-Archimedes Documentation
+site-url: https://thecodinglaplace.com.br
+theme: 
+  name: material
+
+nav:
+  - Home: index.md
+

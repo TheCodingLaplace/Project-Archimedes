@@ -14,6 +14,8 @@ It is quite important to expose the core principles of this project, those who a
 
 - **Build, brake, fix, learn, repeat:** Don't mix your expectations, this is a learning environment! I'll do anything in my power to simulate a real, formal, constrained ambient to achieve it's best state, but will won't be able to do always, but that is the exactly state which I pursuit - learn fast and don't mess in real production.
 
+- **Craft it first, abstract latter:** This one is particulary important for head hunters and people who might see or clone this repo. This is the completion of all princibles above. I'll not allow myself to use abstract tools such as composes, cloud computing, frameworks, CI/CD pipelines and such before I see the clear necessity to use 'em, that doesn't mean I'm a senior in what I use, but at the very bottom I know tge trade-offs of what I'm doing.
+
 ## Current architecture
 
 At the current state, I posses three working machines, each with it's specif limitation. You can check the the [detailed spec file in here](./inventory/cluster.yaml), which presents an yaml file describing each node of the cluster. 
@@ -76,3 +78,29 @@ Briefly, the role-machine relation will be:
 You can access the current state of the project from inside checking out [my personal domain](https://thecodinglaplace.com.br)
 
 ## Choices and flux
+
+Currently, while I'm finishing preparing mostly of the documentation, I'm serving already an preview in a homologation eviroment, and the flux is quite simple:
+
+```ASCII
+\ _____________________________________________________________________________________ #
+\
+\ - Exec [repo-provisioning.yaml](./playbooks/repo-provisioning.yaml) 
+\   |__ > in dev-station
+\   |__ > using ssh-agent fowarding to validate the ssh-key *
+\ 
+\ - Connect via ssh in atom
+\ - Exec [init-homolog.sh](./scripts/init-homolog.sh)
+\   |__ > Donwload the dependencies
+\   |__ > Start the http tunnel and the API
+\   |__ > Build documentation via mkdocs
+\   |__ > Clean and start again the logs on a temporary sub-directory
+\   |__ > via nohup*
+\   
+\   And start the engine ;)
+\ _____________________________________________________________________________________ #
+```
+* Personaly I use gh, the github oficial general cli tool to connect my machine to my account, and for safety reasons, I use ssh-keys reather then passwords or classical tokens, so because of it I put at running time my ssh-key to validade de repo in all the cluster machines. More info about that when documentation is ready. 
+
+* Nohup is a way to exec a command in a remote machine via ssh in the with does not require the command to me to remain in the session to keep working, so if I didn't do that I'd be forced to keep the ssh session open just to keep the eviroment up, which goes exacly againts the objective: Be an already high avalible eviroment to test.
+
+Regardless of what I could or could not be the best way to do what I'm doing I think it is important, specially for my scenario, to scale laywer by laywer of abstraction and tool

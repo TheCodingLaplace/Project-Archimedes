@@ -14,7 +14,7 @@ RUN curl -L -o /usr/local/bin/cloudflared https://github.com/cloudflare/cloudfla
     && chmod +x /usr/local/bin/cloudflared
 
 ENTRYPOINT ["cloudflared", "--no-autoupdate"]
-CMD ["version"]
+CMD ["tunnel", "run", "flask-homolog"]
 
 # This files grant that I will have a possibility to manualy compile a dockerimage of cloudflared and run it as a service
 # if I needed so, although it may or may not be curently working 'cause I did not test it yet.

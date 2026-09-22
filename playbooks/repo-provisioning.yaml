@@ -1,0 +1,18 @@
+---
+- name: provisioning the Project itself
+  hosts: all
+  vars:
+
+    ansible_ssh_common_args: "-o ForwardAgent=yes"
+
+    repo_url: "git@github.com:TheCodingLaplace/Project-Archimedes"
+    dest_path: "~/projects/infra/"
+
+  tasks:
+    - name: fetching the repo
+      ansible.builtin.git:
+        repo: "{{ repo_url }}"
+        dest: "{{ dest_path }}"
+        version: main
+        accept_hostkey: true
+        update: true

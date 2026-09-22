@@ -1,0 +1,24 @@
+services:
+  cloudflared:
+    build:
+      context: ../../dockerfiles
+      dockerfile: Cloudflared-386-File
+    container_name: cloudflared
+    ports: "8080:8080"
+
+  api:
+    build:
+      context: ../../dockerfiles
+      dockerfile: Flask-API
+    container_name: flask
+    
+    volumes:
+      - ../../../API/main.py:~/main.py:ro
+      - ../../../API/templates/:templates/:ro
+
+  docs:
+    image: squidfunk/mkdocs-material:latest
+    container_name: mkdocs
+    volumes:
+      - ../../../docs:/docs
+    command: serve -a 0.0.0.0:8000

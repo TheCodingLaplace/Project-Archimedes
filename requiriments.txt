@@ -1,0 +1,9 @@
+# Up until this point I didn't notice a error 'caused by version-dependencies, so Imma keep it simple
+# and just name the dependencies packages as they are until some error happend, 'cause I notice from 
+# previous projetcs that only execute "pip freeze > requiriments.txt" would trow a bunch of packages
+# not necessarely have something to deal with the projetcs itsel.
+
+mkdocs
+mkdocs-material
+flask
+requests

@@ -1,9 +1,18 @@
 # Manualy created
+
+# Work directories which I did not finish config yet
+kubernets/*
 .github/workflows/*
 AWS/modules/*
 AWS/enviroments/*
+
+# Eviroments directoires
 .env
+venv/
+.venv/
 inventory/*/
 inventory/*.ini
-playbooks/
 roles/
+
+# Temporary local directories
+/logs/current/*
