@@ -6,6 +6,17 @@ import os
 
 app = Flask(__name__)
 
+running_container = (
+        os.path.exists('/.dockerenv') or 
+        os.path.exists('/run/.containerenv') or 
+        os.getenv("RUNNING_IN_CONTAINER") == "true"
+        )
+
+if not running_container:
+    mkdocs_url = 'http://localhost:8000/docs/'
+else: 
+    mkdocs_url = 'http://docs:8000/docs/'
+
 @app.route("/comming-soon/")
 def preview_page():
     return render_template("comming-soon.html")
@@ -18,16 +29,6 @@ def web_root():
 @app.route("/docs/<path:path>")
 def go_to_docs(path):
     
-    running_container = (
-            os.path.exists('/.dockerenv') or 
-            os.path.exists('/run/.containerenv') or 
-            os.getenv("RUNNING_IN_CONTAINER") == "true"
-            )
-
-    if not running_container:
-        mkdocs_url = 'http://localhost:8000'
-    else: 
-        mkdocs_url = 'http://docs:8000'
 
     url = f"{mkdocs_url}/{path}"
     
